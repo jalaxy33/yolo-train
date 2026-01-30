@@ -29,4 +29,4 @@ tasks:
   git-push:
     desc: push changes to the remote repository
     cmds:
-      - git push origin --all
+      - git push wd --all
