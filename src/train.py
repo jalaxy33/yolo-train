@@ -31,7 +31,7 @@ def main():
     model = YOLO(checkpoint_path)
 
     # train
-    epochs = 25
+    epochs = 30
     model.train(
         data=data_yaml,
         epochs=epochs,

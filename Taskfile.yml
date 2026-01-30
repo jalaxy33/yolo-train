@@ -13,7 +13,7 @@ tasks:
     silent: true
 
   init:
-    desc: Initialize the dependencies
+    desc: Install dependencies
     cmds:
       - uv sync
 
