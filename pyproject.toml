@@ -1,7 +1,7 @@
 [project]
 name = "yolo-train"
 version = "0.1.0"
-description = "YOLO finetuning framework"
+description = "YOLO training framework"
 readme = "README.md"
 requires-python = ">=3.12"
 
