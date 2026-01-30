@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+vars:
+  GREETING: Hello, world!
+
+tasks:
+  default:
+    desc: Print a greeting message
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  init:
+    desc: Initialize the dependencies
+    cmds:
+      - uv sync
+
+  # -- yolo tasks
+
+  train:
+    desc: Train the YOLO model
+    cmds:
+      - uv run src/train.py
+
+  
+  # -- Git-related tasks
+  git-push:
+    desc: push changes to the remote repository
+    cmds:
+      - git push origin --all
