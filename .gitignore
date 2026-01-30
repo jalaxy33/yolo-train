@@ -1,0 +1,26 @@
+# github files
+.github/
+.wiki/
+
+# IDE files
+.vscode/
+.idea/
+.cursor/
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+
+# large data files
+data/
+
+# generated files
+results/
+

@@ -1,0 +1,54 @@
+[project]
+name = "yolo-train"
+version = "0.1.0"
+description = "YOLO finetuning framework"
+readme = "README.md"
+requires-python = ">=3.12"
+
+# Required dependencies ------------------------------------------------------------------------------------------------
+dependencies = [
+    "loguru>=0.7.3",
+    "numpy<2",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+    "ultralytics>=8.4.6",
+]
+
+# Dependency groups ------------------------------------------------------------------------------------------------
+[tool.uv]
+default-groups = ["export"]
+
+
+[dependency-groups]
+export = [
+    "onnx>=1.19.0",
+    "onnxruntime>=1.23.2",
+    "onnxruntime-gpu>=1.25.0.dev20260128001",
+    "onnxslim>=0.1.82",
+]
+
+
+# Custom package sources ----------------------------------------------------------------------------------------------
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130" }]
+torchvision = [{ index = "pytorch-cu130" }]
+torchaudio = [{ index = "pytorch-cu130" }]
+onnxruntime-gpu = [{ index = "ortgpu-cu130" }]
+
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://mirror.sjtu.edu.cn/pytorch-wheels/cu129"
+explicit = true
+
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://mirror.sjtu.edu.cn/pytorch-wheels/cu130"
+explicit = true
+
+
+[[tool.uv.index]]
+name = "ortgpu-cu130"
+url = "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/"
+explicit = true

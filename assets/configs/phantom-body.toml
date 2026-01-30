@@ -1,0 +1,7 @@
+[yolo-settings]
+datasets_dir = "data/Data/lung-us/lab-scene/phantom-body/IoU-test/for-yolo"
+weights_dir = "data/Data/checkpoints/ultralytics/yolo26"
+runs_dir = "results/phantom-body"
+
+[dataset]
+splits_dirname = "splits"
