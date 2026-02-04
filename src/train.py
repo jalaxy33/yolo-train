@@ -18,7 +18,7 @@ def main():
     yolo_settings = load_yolo_settings(yolo_config_toml)
 
     # get checkpoint and data
-    model_name = "yolo26n-seg"
+    model_name = "yolo26s-seg"
     data_yamlfile = "phantom-body.train.yaml"
 
     checkpoint_path = Path(yolo_settings.weights_dir).joinpath(f"{model_name}.pt")
@@ -31,7 +31,7 @@ def main():
     model = YOLO(checkpoint_path)
 
     # train
-    epochs = 30
+    epochs = 50
     model.train(
         data=data_yaml,
         epochs=epochs,
@@ -41,7 +41,7 @@ def main():
     )
 
     # export to ONNX
-    model.export(format="onnx", half=True, dynamic=True, simplify=True)
+    model.export(format="onnx", half=True, dynamic=True, simplify=True, end2end=False)
 
 
 if __name__ == "__main__":
